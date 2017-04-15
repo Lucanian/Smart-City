@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SmartCity.Models;
 
 namespace Smart_City
 {
@@ -29,6 +30,9 @@ namespace Smart_City
         {
             // Add framework services.
             services.AddMvc();
+
+            //Add EntityFramework
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
