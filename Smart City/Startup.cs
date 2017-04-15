@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SmartCity.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Smart_City
 {
@@ -31,8 +32,8 @@ namespace Smart_City
             // Add framework services.
             services.AddMvc();
 
-            //Add EntityFramework
-            
+            var connection = @"Server=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            services.AddDbContext<CityContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
