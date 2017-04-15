@@ -10,12 +10,11 @@ namespace SmartCity.Models
     public class CityContext : DbContext
     {
 
-        public CityContext()
-        {
-           
-        }
-       
-        //public DbSet <CLASS> _name {get; set; }
+        public CityContext(DbContextOptions<CityContext> options)
+            : base(options)
+        { }
+
+        public DbSet<Camera> Camere { get; set; }
 
     }
 }

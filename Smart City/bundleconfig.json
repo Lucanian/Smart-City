@@ -18,6 +18,7 @@
       "enabled": true,
       "renameLocals": true
     },
+
     // Optionally generate .map file
     "sourceMap": false
   }

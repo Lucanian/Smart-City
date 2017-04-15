@@ -4,11 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SmartCity.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Smart_City.Controllers
 {
     public class HomeController : Controller
     {
+
+        [Authorize]
+        public IActionResult Camere()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
