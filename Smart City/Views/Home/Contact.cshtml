@@ -1,34 +1,35 @@
 ﻿@model SmartCity.ViewModels.ContactViewModel
-    ViewData["Title"] = "Contact";
+    @{
+        ViewData["Title"] = "Contact";
 
 }
 @section scripts{
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     }
- <div id="Main">
-        <h2>
-            Contact us!
-        </h2>
-        <form method="post">
-            <span asp-validation-summary="ModelOnly"></span>
-            <div class="form-group">
+                <h2>
+                    Contact us!
+                </h2>
+                <form method="post">
+                    <span asp-validation-summary="ModelOnly"></span>
+                    <div class="form-group">
 
-                <label asp-for="Name" style="left:40px"></label>
-                <input class="form-control" asp-for="Name" style="left:80px" />
-                <span asp-validation-for="Name"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email">Email</label>
-                <input class="form-control" type="email" asp-for="Email" style="left:850px" />
-                <span asp-validation-for="Email"></span>
-            </div>
-            <div>
-                <label asp-for="Message">Message</label>
+                        <label asp-for="Name" style="left:40px"></label>
+                        <input class="form-control" asp-for="Name" style="left:80px" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input class="form-control" type="email" asp-for="Email" style="left:80px" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Message">Message</label>
 
-            </div>
-            <div><textarea cols="40" rows="4" class="form-control" asp-for="Message" style="left:80px"></textarea> 
-            <span asp-validation-for="Message"></span></div>
-            <div><input class="form-control"  type="submit" value="Send" style="left:80px" /></div>
-        </form>
-    </div>
+                    </div>
+                    <div>
+                        <textarea cols="40" rows="4" class="form-control" asp-for="Message" style="left:80px"></textarea>
+                        <span asp-validation-for="Message"></span>
+                    </div>
+                    <div><input class="form-control btn btn-success" type="submit" value="Send" style="left:80px" /></div>
+                </form>
