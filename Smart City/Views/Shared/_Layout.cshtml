@@ -15,22 +15,22 @@
     <div id="BaraSus">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                    <div class="text-center">
-                            <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("Index","Home")'">
-                                <i class="fa fa-home"></i>
-                            </button>
-                        <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("Contact","Home")'">
-                            <i class="fa fa-phone"></i>
-                        </button>
-                        <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("About","Home")'">
-                            <i class="fa fa-info-circle"></i>
-                        </button>
-                    </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("Index","Home")'">
+                        <i class="fa fa-home"></i>
+                    </button>
+                    <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("Contact","Home")'">
+                        <i class="fa fa-phone"></i>
+                    </button>
+                    <button type="button" class="btn btn-lg" onclick="location.href='@Url.Action("About","Home")'">
+                        <i class="fa fa-info-circle"></i>
+                    </button>
+                </div>
             </div>
         </nav>
     </div>
    
-    <div class="container body-content">
+    <div class="container-fluid">
         @RenderBody()
     </div>
         <footer class="container-fluid">

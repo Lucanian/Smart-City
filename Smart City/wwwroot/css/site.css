@@ -1,10 +1,4 @@
-﻿/* Wrapping element */
-
-#BaraSus {
-    position: fixed;
-    width:100%;
-}
-   
+﻿/* Wrapping element */ 
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
@@ -32,6 +26,3 @@ ul{
     }
 }
 
-#Main{
-    padding-top:5%;
-}
