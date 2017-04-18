@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SmartCity.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Smart_City
 {
@@ -32,8 +33,20 @@ namespace Smart_City
             // Add framework services.
             services.AddMvc();
 
+            //Add an SQL Server
             var connection = @"Server=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<CityContext>(options => options.UseSqlServer(connection));
+
+            //Add Identity
+            services.AddIdentity<SmartUser, IdentityRole>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredLength = 8;
+                config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
+            }
+           )
+            .AddEntityFrameworkStores<CityContext>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +65,10 @@ namespace Smart_City
                 app.UseExceptionHandler("/Home/Error");
             }
 
+           
             app.UseStaticFiles();
+
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {
